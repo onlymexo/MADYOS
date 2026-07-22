@@ -5,87 +5,20 @@
 <title>MadyOS – Optimized Games and OS Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #0f172a;
-        color: #e5e7eb;
-        margin: 0;
-    }
-    header {
-        background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
-        padding: 40px 20px;
-        text-align: center;
-    }
-    header h1 {
-        margin: 0;
-        font-size: 2.8rem;
-    }
-    header p {
-        margin-top: 10px;
-        font-size: 1.2rem;
-    }
-    main {
-        max-width: 900px;
-        margin: 30px auto;
-        padding: 0 20px 40px;
-    }
-    section {
-        margin-bottom: 40px;
-        background: #111827;
-        border-radius: 10px;
-        padding: 25px;
-        display: none;
-    }
-    h2 {
-        margin-top: 0;
-        color: #93c5fd;
-    }
-    a.button {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 20px;
-        background: #22c55e;
-        color: #000;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: bold;
-        font-size: 1.1rem;
-        cursor: pointer;
-    }
-    a.button:hover {
-        background: #16a34a;
-    }
-    .gallery img {
-        width: 100%;
-        border-radius: 8px;
-        margin-bottom: 15px;
-        border: 1px solid #1f2937;
-    }
-    .os-choice, .software-list {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-    .os-box, .software-box {
-        flex: 1;
-        min-width: 250px;
-        background: #0f172a;
-        padding: 20px;
-        border-radius: 10px;
-        border: 1px solid #1f2937;
-        text-align: center;
-    }
-    #searchBar {
-        width: 100%;
-        padding: 12px;
-        border-radius: 8px;
-        border: none;
-        margin-bottom: 20px;
-        font-size: 1rem;
-    }
-    ol {
-        padding-left: 20px;
-    }
+    body { font-family: Arial, sans-serif; background: #0f172a; color: #e5e7eb; margin: 0; }
+    header { background: linear-gradient(135deg, #1d4ed8, #0ea5e9); padding: 40px 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 2.8rem; }
+    header p { margin-top: 10px; font-size: 1.2rem; }
+    main { max-width: 900px; margin: 30px auto; padding: 0 20px 40px; }
+    section { margin-bottom: 40px; background: #111827; border-radius: 10px; padding: 25px; display: none; }
+    h2 { margin-top: 0; color: #93c5fd; }
+    a.button { display: inline-block; margin-top: 20px; padding: 12px 20px; background: #22c55e; color: #000; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1.1rem; cursor: pointer; }
+    a.button:hover { background: #16a34a; }
+    .gallery img { width: 100%; border-radius: 8px; margin-bottom: 15px; border: 1px solid #1f2937; }
+    .os-choice, .software-list { display: flex; gap: 20px; flex-wrap: wrap; }
+    .os-box, .software-box { flex: 1; min-width: 250px; background: #0f172a; padding: 20px; border-radius: 10px; border: 1px solid #1f2937; text-align: center; }
+    #searchBar { width: 100%; padding: 12px; border-radius: 8px; border: none; margin-bottom: 20px; font-size: 1rem; }
+    ol { padding-left: 20px; }
 </style>
 
 <script>
@@ -98,7 +31,6 @@ function showPage(page) {
 function searchSoftware() {
     let input = document.getElementById("searchBar").value.toLowerCase();
     let items = document.getElementsByClassName("software-box");
-
     for (let i = 0; i < items.length; i++) {
         let name = items[i].getAttribute("data-name").toLowerCase();
         items[i].style.display = name.includes(input) ? "block" : "none";
@@ -119,166 +51,160 @@ function searchSoftware() {
 
 <main>
 
-    <!-- INTRODUCTION -->
-    <section id="introPage" style="display:block;">
-        <h2>Introduction</h2>
-        <p>
-            Welcome to MadyOS — a project dedicated to creating fast, lightweight and optimized Windows builds.
-            Modern Windows versions often include unnecessary background services, telemetry, pre‑installed apps and
-            heavy components that slow down older hardware.
-        </p>
-        <p>
-            MadyOS solves this by offering optimized versions of Windows 10 and Windows 11, carefully stripped of bloat,
-            compressed for faster installation, and tuned to run smoothly even on low‑end or aging PCs.
-        </p>
-        <p>
-            Alongside custom operating systems, this page also includes a curated list of optimized software and games,
-            complete with a search bar to quickly find what you need.
-        </p>
-        <p>
-            Choose a category above to begin exploring.
-        </p>
-    </section>
+<!-- INTRO -->
+<section id="introPage" style="display:block;">
+    <h2>Introduction</h2>
+    <p>MadyOS provides optimized Windows builds and a curated collection of optimized games and software.</p>
+    <p>Everything here is lightweight, fast, and designed for smooth performance on any PC.</p>
+</section>
 
-    <!-- OPERATING SYSTEMS PAGE -->
-    <section id="osPage">
-        <h2>Operating Systems</h2>
-        <p>Select which version of MadyOS you want to explore.</p>
-
-        <div class="os-choice">
-            <div class="os-box">
-                <h3>MadyOS 10</h3>
-                <p>Optimized Windows 10 for older PCs.</p>
-                <a class="button" onclick="showPage('mady10Page')">View MadyOS 10</a>
-            </div>
-
-            <div class="os-box">
-                <h3>MadyOS 11</h3>
-                <p>Minimal and fast Windows 11 LTSC‑style build.</p>
-                <a class="button" onclick="showPage('mady11Page')">View MadyOS 11</a>
-            </div>
+<!-- OS PAGE -->
+<section id="osPage">
+    <h2>Operating Systems</h2>
+    <div class="os-choice">
+        <div class="os-box">
+            <h3>MadyOS 10</h3>
+            <p>Optimized Windows 10.</p>
+            <a class="button" onclick="showPage('mady10Page')">View</a>
         </div>
-    </section>
-
-    <!-- MADYOS 10 PAGE -->
-    <section id="mady10Page">
-        <h2>MadyOS 10</h2>
-        <p>
-            MadyOS 10 is a lightweight and optimized Windows 10 build designed specifically for older PCs.
-            It removes unnecessary components, reduces background processes and improves responsiveness.
-        </p>
-
-        <div class="gallery">
-            <img src="madyos101.jpg" alt="MadyOS 10 Screenshot 1">
-            <img src="madyos102.jpg" alt="MadyOS 10 Screenshot 2">
+        <div class="os-box">
+            <h3>MadyOS 11</h3>
+            <p>Optimized Windows 11.</p>
+            <a class="button" onclick="showPage('mady11Page')">View</a>
         </div>
+    </div>
+</section>
 
-        <a class="button" href="https://buzzheavier.com/bpc6zj73mmxm" target="_blank">Download MadyOS 10</a>
-        <br><br>
+<!-- MADYOS 10 -->
+<section id="mady10Page">
+    <h2>MadyOS 10</h2>
+    <p>Optimized Windows 10 for all PCs.</p>
+    <div class="gallery">
+        <img src="madyos101.jpg">
+        <img src="madyos102.jpg">
+    </div>
+    <a class="button" href="https://buzzheavier.com/bpc6zj73mmxm" target="_blank">Download</a>
+    <a class="button" onclick="showPage('osPage')">Back</a>
+</section>
 
-        <h3>Installation Error Fix</h3>
-        <div class="gallery">
-            <img src="error.jpg" alt="Windows installation error screenshot">
+<!-- MADYOS 11 -->
+<section id="mady11Page">
+    <h2>MadyOS 11</h2>
+    <p>Optimized Windows 11 LTSC-style.</p>
+    <div class="gallery">
+        <img src="screenshots.jpg">
+        <img src="screenshotf.jpg">
+    </div>
+    <a class="button" href="https://buzzheavier.com/dwq2zz8zio25" target="_blank">Download</a>
+    <a class="button" onclick="showPage('osPage')">Back</a>
+</section>
+
+<!-- SOFTWARES & GAMES -->
+<section id="softwarePage">
+    <h2>Softwares & Games</h2>
+    <input type="text" id="searchBar" onkeyup="searchSoftware()" placeholder="Search software or games...">
+
+    <div class="software-list">
+
+        <div class="software-box" data-name="filmora">
+            <h3>Filmora</h3>
+            <a class="button" href="https://buzzheavier.com/5qagvfn8weva" target="_blank">Download</a>
         </div>
 
-        <ol>
-            <li>Press <code>Shift + F10</code> on the error screen.</li>
-            <li>Type <code>regedit</code> and press Enter.</li>
-            <li>Go to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion</code></li>
-            <li>Open <code>setup.exe</code> and change value from 1 to 3.</li>
-            <li>Restart installation.</li>
-        </ol>
-
-        <a class="button" onclick="showPage('osPage')">Back</a>
-    </section>
-
-    <!-- MADYOS 11 PAGE -->
-    <section id="mady11Page">
-        <h2>MadyOS 11</h2>
-        <p>
-            MadyOS 11 is a fast, minimal and optimized Windows 11 LTSC‑style build.
-            It keeps the modern interface while removing telemetry and bloat.
-        </p>
-
-        <div class="gallery">
-            <img src="screenshots.jpg" alt="MadyOS 11 Screenshot 1">
-            <img src="screenshotf.jpg" alt="MadyOS 11 Screenshot 2">
+        <div class="software-box" data-name="beamng drive">
+            <h3>BeamNG Drive</h3>
+            <a class="button" href="https://gofile.io/d/tR4vV9" target="_blank">Download</a>
         </div>
 
-        <a class="button" href="https://buzzheavier.com/dwq2zz8zio25" target="_blank">Download MadyOS 11</a>
-        <br><br>
-
-        <h3>Installation Error Fix</h3>
-        <div class="gallery">
-            <img src="error.jpg" alt="Windows installation error screenshot">
+        <div class="software-box" data-name="gta 5">
+            <h3>GTA 5</h3>
+            <a class="button" href="https://buzzheavier.com/w6gqiq80wacf" target="_blank">Download</a>
         </div>
 
-        <ol>
-            <li>Press <code>Shift + F10</code> on the error screen.</li>
-            <li>Type <code>regedit</code> and press Enter.</li>
-            <li>Go to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion</code></li>
-            <li>Open <code>setup.exe</code> and change value from 1 to 3.</li>
-            <li>Restart installation.</li>
-        </ol>
-
-        <a class="button" onclick="showPage('osPage')">Back</a>
-    </section>
-
-    <!-- SOFTWARES & GAMES PAGE -->
-    <section id="softwarePage">
-        <h2>Softwares & Games</h2>
-        <p>Search for software or games below.</p>
-
-        <input type="text" id="searchBar" onkeyup="searchSoftware()" placeholder="Search software or games...">
-
-        <div class="software-list">
-
-            <div class="software-box" data-name="filmora">
-                <h3>Filmora</h3>
-                <p>Video editing software.</p>
-                <a class="button" href="https://buzzheavier.com/5qagvfn8weva" target="_blank">Download Filmora</a>
-            </div>
-
-            <div class="software-box" data-name="beamng drive beamng">
-                <h3>BeamNG Drive</h3>
-                <p>Realistic car crash & driving simulation game.</p>
-                <a class="button" href="https://gofile.io/d/tR4vV9" target="_blank">Download BeamNG Drive</a>
-            </div>
-
-            <div class="software-box" data-name="gta 5 grand theft auto">
-                <h3>GTA 5</h3>
-                <p>Open world action game.</p>
-                <a class="button" href="https://buzzheavier.com/w6gqiq80wacf" target="_blank">Download GTA 5</a>
-            </div>
-
-            <div class="software-box" data-name="gta iv gta 4 grand theft auto iv">
-                <h3>GTA IV</h3>
-                <p>Classic open world action game.</p>
-                <a class="button" href="https://gofile.io/d/XrqdR5" target="_blank">Download GTA IV</a>
-            </div>
-
-            <div class="software-box" data-name="forza horizon 4 fh4 racing">
-                <h3>Forza Horizon 4</h3>
-                <p>Open world racing game.</p>
-                <a class="button" href="https://gofile.io/d/OtEhEn" target="_blank">Download FH4</a>
-            </div>
-
-            <div class="software-box" data-name="forza horizon 5 fh5 racing">
-                <h3>Forza Horizon 5</h3>
-                <p>Next‑gen open world racing game.</p>
-                <a class="button" href="https://gofile.io/d/eVupkr" target="_blank">Download FH5</a>
-            </div>
-
-            <div class="software-box" data-name="resident evil requiem horror">
-                <h3>Resident Evil Requiem</h3>
-                <p>Survival horror game.</p>
-                <a class="button" href="https://gofile.io/d/QisQM8" target="_blank">Download Resident Evil Requiem</a>
-            </div>
-
+        <div class="software-box" data-name="gta iv gta 4">
+            <h3>GTA IV</h3>
+            <a class="button" href="https://gofile.io/d/XrqdR5" target="_blank">Download</a>
         </div>
 
-        <a class="button" onclick="showPage('introPage')">Back</a>
-    </section>
+        <div class="software-box" data-name="forza horizon 4 fh4">
+            <h3>Forza Horizon 4</h3>
+            <a class="button" href="https://gofile.io/d/OtEhEn" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="forza horizon 5 fh5">
+            <h3>Forza Horizon 5</h3>
+            <a class="button" href="https://gofile.io/d/eVupkr" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="resident evil requiem">
+            <h3>Resident Evil Requiem</h3>
+            <a class="button" href="https://gofile.io/d/QisQM8" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="minecraft console edition">
+            <h3>Minecraft Console Edition</h3>
+            <a class="button" href="https://gradengnostic.github.io/legacylauncherweb/" target="_blank">Play</a>
+        </div>
+
+        <div class="software-box" data-name="minecraft java">
+            <h3>Minecraft Java Edition</h3>
+            <a class="button" href="https://buzzheavier.com/gqpnat8fteha" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="cod bo3 call of duty black ops 3">
+            <h3>Call of Duty Black Ops 3</h3>
+            <a class="button" href="https://gofile.io/d/kfJDyr" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="cod 1 call of duty 1">
+            <h3>Call of Duty 1</h3>
+            <a class="button" href="https://gofile.io/d/xuQNY4" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="cs go 2017 counter strike">
+            <h3>CS:GO 2017</h3>
+            <a class="button" href="https://gofile.io/d/RsTE3u" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="fortnite">
+            <h3>Fortnite</h3>
+            <a class="button" href="https://gofile.io/d/zfEcQx" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="far cry 5">
+            <h3>Far Cry 5</h3>
+            <a class="button" href="https://gofile.io/d/3304Dw" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="far cry 6">
+            <h3>Far Cry 6</h3>
+            <a class="button" href="https://bzzhr.to/yam0smah3pin" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="fh6 forza horizon 6">
+            <h3>Forza Horizon 6</h3>
+            <a class="button" href="https://bzzhr.to/q20rhnpplhce" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="gta san andreas gta sa">
+            <h3>GTA San Andreas</h3>
+            <a class="button" href="https://buzzheavier.com/8mlainoqwr79" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="gta vc vice city">
+            <h3>GTA Vice City</h3>
+            <a class="button" href="https://gofile.io/d/Py7RvH" target="_blank">Download</a>
+        </div>
+
+        <div class="software-box" data-name="gta 3">
+            <h3>GTA 3</h3>
+            <a class="button" href="https://www.mediafire.com/file/l1j15jhed10gp9s" target="_blank">Download</a>
+        </div>
+
+    </div>
+
+    <a class="button" onclick="showPage('introPage')">Back</a>
+</section>
 
 </main>
 
