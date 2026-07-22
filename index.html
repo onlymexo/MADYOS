@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MadyOS – Custom Windows Builds</title>
+<title>MadyOS – Optimized Games and OS Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     body {
@@ -61,12 +61,12 @@
         margin-bottom: 15px;
         border: 1px solid #1f2937;
     }
-    .os-choice {
+    .os-choice, .software-list {
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
     }
-    .os-box {
+    .os-box, .software-box {
         flex: 1;
         min-width: 250px;
         background: #0f172a;
@@ -74,6 +74,14 @@
         border-radius: 10px;
         border: 1px solid #1f2937;
         text-align: center;
+    }
+    #searchBar {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        margin-bottom: 20px;
+        font-size: 1rem;
     }
     ol {
         padding-left: 20px;
@@ -86,6 +94,16 @@ function showPage(page) {
     document.getElementById(page).style.display = "block";
     window.scrollTo(0, 0);
 }
+
+function searchSoftware() {
+    let input = document.getElementById("searchBar").value.toLowerCase();
+    let items = document.getElementsByClassName("software-box");
+
+    for (let i = 0; i < items.length; i++) {
+        let name = items[i].getAttribute("data-name").toLowerCase();
+        items[i].style.display = name.includes(input) ? "block" : "none";
+    }
+}
 </script>
 
 </head>
@@ -93,42 +111,39 @@ function showPage(page) {
 
 <header>
     <h1>MadyOS</h1>
-    <p>Fast, optimized and privacy‑focused Windows builds.</p>
-    <a class="button" onclick="showPage('downloadPage')">Download Windows</a>
+    <p>Optimized games and OS</p>
+    <a class="button" onclick="showPage('introPage')">Home</a>
+    <a class="button" onclick="showPage('osPage')">Operating Systems</a>
+    <a class="button" onclick="showPage('softwarePage')">Softwares & Games</a>
 </header>
 
 <main>
 
-    <!-- PAGE 1: INTRO -->
+    <!-- INTRODUCTION -->
     <section id="introPage" style="display:block;">
-        <h2>Welcome to MadyOS</h2>
+        <h2>Introduction</h2>
         <p>
-            MadyOS is a collection of custom‑built Windows operating systems designed for users who want speed,
-            stability and privacy without sacrificing the familiar Windows experience. Over time, modern versions
-            of Windows have become heavier, filled with background services, telemetry, pre‑installed applications
-            and unnecessary components that slow down older hardware.
+            Welcome to MadyOS — a project dedicated to creating fast, lightweight and optimized Windows builds.
+            Modern Windows versions often include unnecessary background services, telemetry, pre‑installed apps and
+            heavy components that slow down older hardware.
         </p>
         <p>
-            MadyOS solves this problem by offering optimized versions of Windows 10 and Windows 11, carefully
-            stripped of bloat, compressed for faster installation, and tuned to run smoothly even on low‑end or
-            aging PCs. Whether you're reviving an old computer, building a lightweight virtual machine, or simply
-            wanting a cleaner and faster Windows environment, MadyOS provides a reliable and efficient solution.
+            MadyOS solves this by offering optimized versions of Windows 10 and Windows 11, carefully stripped of bloat,
+            compressed for faster installation, and tuned to run smoothly even on low‑end or aging PCs.
         </p>
         <p>
-            Each version of MadyOS is crafted with attention to performance, privacy and simplicity. You get the
-            essential Windows features you need, without the clutter you don’t. The result is a responsive, stable
-            and modern operating system that feels fresh and fast.
+            Alongside custom operating systems, this page also includes a curated list of optimized software and games,
+            complete with a search bar to quickly find what you need.
         </p>
         <p>
-            Choose your preferred version below and explore the full presentation of each OS, including screenshots,
-            features and download links.
+            Choose a category above to begin exploring.
         </p>
     </section>
 
-    <!-- PAGE 2: CHOOSE OS -->
-    <section id="downloadPage">
-        <h2>Select your Windows version</h2>
-        <p>Choose which version of MadyOS you want to explore.</p>
+    <!-- OPERATING SYSTEMS PAGE -->
+    <section id="osPage">
+        <h2>Operating Systems</h2>
+        <p>Select which version of MadyOS you want to explore.</p>
 
         <div class="os-choice">
             <div class="os-box">
@@ -145,13 +160,12 @@ function showPage(page) {
         </div>
     </section>
 
-    <!-- PAGE 3: MADYOS 10 -->
+    <!-- MADYOS 10 PAGE -->
     <section id="mady10Page">
         <h2>MadyOS 10</h2>
         <p>
             MadyOS 10 is a lightweight and optimized Windows 10 build designed specifically for older PCs.
-            It removes unnecessary components, reduces background processes and improves responsiveness,
-            making it ideal for hardware with limited RAM or older CPUs.
+            It removes unnecessary components, reduces background processes and improves responsiveness.
         </p>
 
         <div class="gallery">
@@ -163,36 +177,27 @@ function showPage(page) {
         <br><br>
 
         <h3>Installation Error Fix</h3>
-        <p>If you encounter this installation error, you can bypass the setup block using this quick method.</p>
-
         <div class="gallery">
             <img src="error.jpg" alt="Windows installation error screenshot">
         </div>
 
         <ol>
-            <li>On the error screen, press <code>Shift + F10</code> to open Command Prompt.</li>
-            <li>Type <code>regedit</code> and press <code>Enter</code>.</li>
-            <li>Navigate to:<br>
-                <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion</code>
-            </li>
-            <li>Double-click <code>setup.exe</code>.</li>
-            <li>Change the value from <code>1</code> to <code>3</code> and click <strong>OK</strong>.</li>
-            <li>Close Registry Editor and Command Prompt.</li>
-            <li>Click <strong>OK</strong> on the error window to restart the PC.</li>
-            <li>Windows setup will continue and finish automatically.</li>
+            <li>Press <code>Shift + F10</code> on the error screen.</li>
+            <li>Type <code>regedit</code> and press Enter.</li>
+            <li>Go to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion</code></li>
+            <li>Open <code>setup.exe</code> and change value from 1 to 3.</li>
+            <li>Restart installation.</li>
         </ol>
 
-        <br>
-        <a class="button" onclick="showPage('downloadPage')">Back</a>
+        <a class="button" onclick="showPage('osPage')">Back</a>
     </section>
 
-    <!-- PAGE 4: MADYOS 11 -->
+    <!-- MADYOS 11 PAGE -->
     <section id="mady11Page">
         <h2>MadyOS 11</h2>
         <p>
-            MadyOS 11 is a fast, minimal and privacy‑focused Windows 11 LTSC‑style build.
-            It keeps the modern Windows 11 interface while removing telemetry, bloatware and heavy background tasks.
-            Perfect for users who want a clean and efficient Windows 11 experience.
+            MadyOS 11 is a fast, minimal and optimized Windows 11 LTSC‑style build.
+            It keeps the modern interface while removing telemetry and bloat.
         </p>
 
         <div class="gallery">
@@ -204,27 +209,75 @@ function showPage(page) {
         <br><br>
 
         <h3>Installation Error Fix</h3>
-        <p>If you encounter this installation error, you can bypass the setup block using this quick method.</p>
-
         <div class="gallery">
             <img src="error.jpg" alt="Windows installation error screenshot">
         </div>
 
         <ol>
-            <li>On the error screen, press <code>Shift + F10</code> to open Command Prompt.</li>
-            <li>Type <code>regedit</code> and press <code>Enter</code>.</li>
-            <li>Navigate to:<br>
-                <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion</code>
-            </li>
-            <li>Double-click <code>setup.exe</code>.</li>
-            <li>Change the value from <code>1</code> to <code>3</code> and click <strong>OK</strong>.</li>
-            <li>Close Registry Editor and Command Prompt.</li>
-            <li>Click <strong>OK</strong> on the error window to restart the PC.</li>
-            <li>Windows setup will continue and finish automatically.</li>
+            <li>Press <code>Shift + F10</code> on the error screen.</li>
+            <li>Type <code>regedit</code> and press Enter.</li>
+            <li>Go to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion</code></li>
+            <li>Open <code>setup.exe</code> and change value from 1 to 3.</li>
+            <li>Restart installation.</li>
         </ol>
 
-        <br>
-        <a class="button" onclick="showPage('downloadPage')">Back</a>
+        <a class="button" onclick="showPage('osPage')">Back</a>
+    </section>
+
+    <!-- SOFTWARES & GAMES PAGE -->
+    <section id="softwarePage">
+        <h2>Softwares & Games</h2>
+        <p>Search for software or games below.</p>
+
+        <input type="text" id="searchBar" onkeyup="searchSoftware()" placeholder="Search software or games...">
+
+        <div class="software-list">
+
+            <div class="software-box" data-name="filmora">
+                <h3>Filmora</h3>
+                <p>Video editing software.</p>
+                <a class="button" href="https://buzzheavier.com/5qagvfn8weva" target="_blank">Download Filmora</a>
+            </div>
+
+            <div class="software-box" data-name="beamng drive beamng">
+                <h3>BeamNG Drive</h3>
+                <p>Realistic car crash & driving simulation game.</p>
+                <a class="button" href="https://gofile.io/d/tR4vV9" target="_blank">Download BeamNG Drive</a>
+            </div>
+
+            <div class="software-box" data-name="gta 5 grand theft auto">
+                <h3>GTA 5</h3>
+                <p>Open world action game.</p>
+                <a class="button" href="https://buzzheavier.com/w6gqiq80wacf" target="_blank">Download GTA 5</a>
+            </div>
+
+            <div class="software-box" data-name="gta iv gta 4 grand theft auto iv">
+                <h3>GTA IV</h3>
+                <p>Classic open world action game.</p>
+                <a class="button" href="https://gofile.io/d/XrqdR5" target="_blank">Download GTA IV</a>
+            </div>
+
+            <div class="software-box" data-name="forza horizon 4 fh4 racing">
+                <h3>Forza Horizon 4</h3>
+                <p>Open world racing game.</p>
+                <a class="button" href="https://gofile.io/d/OtEhEn" target="_blank">Download FH4</a>
+            </div>
+
+            <div class="software-box" data-name="forza horizon 5 fh5 racing">
+                <h3>Forza Horizon 5</h3>
+                <p>Next‑gen open world racing game.</p>
+                <a class="button" href="https://gofile.io/d/eVupkr" target="_blank">Download FH5</a>
+            </div>
+
+            <div class="software-box" data-name="resident evil requiem horror">
+                <h3>Resident Evil Requiem</h3>
+                <p>Survival horror game.</p>
+                <a class="button" href="https://gofile.io/d/QisQM8" target="_blank">Download Resident Evil Requiem</a>
+            </div>
+
+        </div>
+
+        <a class="button" onclick="showPage('introPage')">Back</a>
     </section>
 
 </main>
