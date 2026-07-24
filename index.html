@@ -2,412 +2,209 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MadyOS – Ultra Premium Games & OS Hub</title>
+<title>MadyOS – Ultra Premium Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
-/* GLOBAL */
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at top, #0f172a, #000000);
-    color: #e5e7eb;
-    margin: 0;
-    overflow-x: hidden;
-}
-
-/* HEADER */
-header {
-    backdrop-filter: blur(20px);
-    background: rgba(30, 58, 138, 0.35);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding: 40px 20px;
-    text-align: center;
-    box-shadow: 0 0 40px #00000080;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 3.2rem;
-    letter-spacing: 2px;
-    color: #93c5fd;
-    text-shadow: 0 0 20px #3b82f6;
-}
-
-header p {
-    margin-top: 10px;
-    font-size: 1.3rem;
-    opacity: 0.85;
-}
-
-/* BUTTONS */
-a.button {
-    display: inline-block;
-    margin: 15px 10px;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #22c55e, #4ade80);
-    color: #000;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: 0.25s;
-    box-shadow: 0 0 15px #22c55e80;
-}
-a.button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px #22c55e;
-}
-
-/* MAIN */
-main {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px 60px;
-}
-
-/* SECTIONS */
-section {
-    margin-bottom: 50px;
-    background: rgba(17, 24, 39, 0.55);
-    border-radius: 18px;
-    padding: 35px;
-    display: none;
-    box-shadow: 0 0 40px #00000070;
-    backdrop-filter: blur(25px);
-    border: 1px solid rgba(255,255,255,0.08);
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-h2 {
-    margin-top: 0;
-    color: #93c5fd;
-    font-size: 2rem;
-    text-shadow: 0 0 15px #3b82f6;
-}
-
-/* GALLERY */
-.gallery img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 20px #00000080;
-}
-
-/* CARDS */
-.os-choice, .software-list {
-    display: flex;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.os-box, .software-box {
-    flex: 1;
-    min-width: 260px;
-    background: rgba(15, 23, 42, 0.55);
-    padding: 25px;
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.08);
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 0 25px #00000070;
-    backdrop-filter: blur(20px);
-}
-.os-box:hover, .software-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px #3b82f6;
-}
-
-/* SEARCH BAR */
-#searchBar {
-    width: 100%;
-    padding: 15px;
-    border-radius: 12px;
-    border: none;
-    margin-bottom: 30px;
-    font-size: 1rem;
-    background: rgba(31, 41, 55, 0.7);
-    color: #e5e7eb;
-    box-shadow: 0 0 20px #00000070;
-}
-
-ul, ol { padding-left: 25px; }
-
+body{font-family:'Segoe UI',sans-serif;background:radial-gradient(circle at top,#0f172a,#000);color:#e5e7eb;margin:0;overflow-x:hidden}
+header{backdrop-filter:blur(20px);background:rgba(30,58,138,.35);border-bottom:1px solid rgba(255,255,255,.1);padding:40px 20px;text-align:center;box-shadow:0 0 40px #0008}
+header h1{margin:0;font-size:3.2rem;letter-spacing:2px;color:#93c5fd;text-shadow:0 0 20px #3b82f6}
+header p{margin-top:10px;font-size:1.3rem;opacity:.85}
+a.button{display:inline-block;margin:15px 10px;padding:12px 25px;background:linear-gradient(135deg,#22c55e,#4ade80);color:#000;text-decoration:none;border-radius:10px;font-weight:bold;font-size:1.1rem;cursor:pointer;transition:.25s;box-shadow:0 0 15px #22c55e80}
+a.button:hover{transform:scale(1.08);box-shadow:0 0 25px #22c55e}
+main{max-width:1100px;margin:40px auto;padding:0 20px 60px}
+section{margin-bottom:50px;background:rgba(17,24,39,.55);border-radius:18px;padding:35px;display:none;box-shadow:0 0 40px #0008;backdrop-filter:blur(25px);border:1px solid rgba(255,255,255,.08);animation:fadeIn .5s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+h2{margin-top:0;color:#93c5fd;font-size:2rem;text-shadow:0 0 15px #3b82f6}
+.gallery img{width:100%;border-radius:12px;margin-bottom:15px;border:1px solid rgba(255,255,255,.1);box-shadow:0 0 20px #0008}
+.os-choice,.software-list,.games-list{display:flex;gap:25px;flex-wrap:wrap}
+.os-box,.software-box,.game-box{flex:1;min-width:260px;background:rgba(15,23,42,.55);padding:25px;border-radius:15px;border:1px solid rgba(255,255,255,.08);text-align:center;transition:.3s;box-shadow:0 0 25px #0008;backdrop-filter:blur(20px)}
+.os-box:hover,.software-box:hover,.game-box:hover{transform:scale(1.05);box-shadow:0 0 35px #3b82f6}
+#searchSoft,#searchGames{width:100%;padding:15px;border-radius:12px;border:none;margin-bottom:30px;font-size:1rem;background:rgba(31,41,55,.7);color:#e5e7eb;box-shadow:0 0 20px #0008}
 </style>
 
 <script>
-function showPage(page) {
-    document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
-    document.getElementById(page).style.display = "block";
-    window.scrollTo(0, 0);
-}
-
-function searchSoftware() {
-    let input = document.getElementById("searchBar").value.toLowerCase();
-    let items = document.getElementsByClassName("software-box");
-    for (let i = 0; i < items.length; i++) {
-        let name = items[i].getAttribute("data-name").toLowerCase();
-        items[i].style.display = name.includes(input) ? "block" : "none";
-    }
-}
+function showPage(p){document.querySelectorAll("section").forEach(s=>s.style.display="none");document.getElementById(p).style.display="block";window.scrollTo(0,0)}
+function searchSoftwares(){let i=document.getElementById("searchSoft").value.toLowerCase();document.querySelectorAll(".software-box").forEach(b=>{b.style.display=b.dataset.name.includes(i)?"block":"none"})}
+function searchGames(){let i=document.getElementById("searchGames").value.toLowerCase();document.querySelectorAll(".game-box").forEach(b=>{b.style.display=b.dataset.name.includes(i)?"block":"none"})}
 </script>
-
 </head>
+
 <body>
 
 <header>
     <h1>MadyOS</h1>
     <p>Ultra Premium Games & OS Hub</p>
-    <a class="button" onclick="showPage('introPage')">Home</a>
-    <a class="button" onclick="showPage('osPage')">Operating Systems</a>
-    <a class="button" onclick="showPage('softwarePage')">Softwares & Games</a>
+    <a class="button" onclick="showPage('intro')">Home</a>
+    <a class="button" onclick="showPage('os')">Operating Systems</a>
+    <a class="button" onclick="showPage('soft')">Softwares</a>
+    <a class="button" onclick="showPage('games')">Games</a>
 </header>
 
 <main>
 
-<!-- INTRO -->
-<section id="introPage" style="display:block;">
-    <h2>Introduction</h2>
-
-    <p>
-        <strong>MadyOS is not just an optimized Windows collection — it is a complete performance ecosystem built for users who demand speed, stability, and total control.</strong>
-    </p>
-
-    <p>
-        Every OS, every game, every tool here has been hand‑picked and tuned to deliver maximum performance even on low‑end or aging hardware.  
-        Modern systems are bloated with telemetry, background tasks, and useless components.  
-        <strong>MadyOS removes all of that.</strong>
-    </p>
-
-    <p>
-        Here, everything is designed for pure speed:
-    </p>
-
-    <ul>
-        <li>Lightning‑fast boot times</li>
-        <li>Higher FPS in all games</li>
-        <li>Minimal background usage</li>
-        <li>Lower RAM consumption</li>
-        <li>Better stability on older PCs</li>
-        <li>Zero bloat, zero distractions</li>
-    </ul>
-
-    <p>
-        This hub is built for gamers, creators, and power users who want a clean, fast, and powerful system — without limits.  
-        <br><br>
-        <strong>Welcome to MadyOS.  
-        Performance meets simplicity.</strong>
-    </p>
+<section id="intro" style="display:block;">
+<h2>Introduction</h2>
+<p><strong>MadyOS è un ecosistema di performance: OS ottimizzati, giochi e software selezionati per girare al meglio anche su hardware modesto.</strong></p>
+<p>Ogni build, ogni gioco e ogni tool è scelto per ridurre processi inutili, telemetria e bloat.</p>
+<ul>
+<li>Boot più veloci</li>
+<li>FPS più alti</li>
+<li>Meno RAM usata</li>
+<li>Meno servizi in background</li>
+<li>Maggiore stabilità</li>
+</ul>
+<p><strong>Benvenuto su MadyOS — dove la macchina fa solo quello che vuoi tu.</strong></p>
 </section>
 
-<!-- OS PAGE -->
-<section id="osPage">
-    <h2>Operating Systems</h2>
-    <div class="os-choice">
+<section id="os">
+<h2>Operating Systems</h2>
+<div class="os-choice">
 
-        <div class="os-box">
-            <h3>MadyOS 10</h3>
-            <p>Optimized Windows 10.</p>
-            <a class="button" onclick="showPage('mady10Page')">View</a>
-        </div>
+<div class="os-box">
+<h3>MadyOS 10</h3>
+<p>Windows 10 ottimizzato.</p>
+<a class="button" onclick="showPage('os10')">View</a>
+</div>
 
-        <div class="os-box">
-            <h3>MadyOS 11</h3>
-            <p>Optimized Windows 11.</p>
-            <a class="button" onclick="showPage('mady11Page')">View</a>
-        </div>
+<div class="os-box">
+<h3>MadyOS 11</h3>
+<p>Windows 11 LTSC‑style.</p>
+<a class="button" onclick="showPage('os11')">View</a>
+</div>
 
-    </div>
+</div>
 </section>
 
-<!-- MADYOS 10 -->
-<section id="mady10Page">
-    <h2>MadyOS 10</h2>
-    <p>Optimized Windows 10 for all PCs.</p>
-
-    <div class="gallery">
-        <img src="madyos101.jpg">
-        <img src="madyos102.jpg">
-    </div>
-
-    <a class="button" href="https://buzzheavier.com/bpc6zj73mmxm" target="_blank">Download</a>
-
-    <h3>Installation Error Fix</h3>
-    <div class="gallery"><img src="error.jpg"></div>
-
-    <ol>
-        <li>Press <code>Shift + F10</code></li>
-        <li>Type <code>regedit</code></li>
-        <li>Go to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion</code></li>
-        <li>Set <code>setup.exe</code> from 1 → 3</li>
-        <li>Restart installation</li>
-    </ol>
-
-    <a class="button" onclick="showPage('osPage')">Back</a>
+<section id="os10">
+<h2>MadyOS 10</h2>
+<div class="gallery">
+<img src="madyos101.jpg">
+<img src="madyos102.jpg">
+</div>
+<a class="button" href="https://buzzheavier.com/bpc6zj73mmxm" target="_blank">Download</a>
+<h3>Fix errore installazione</h3>
+<ol>
+<li>Shift + F10</li>
+<li>regedit</li>
+<li>HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion</li>
+<li>setup.exe → 3</li>
+</ol>
+<a class="button" onclick="showPage('os')">Back</a>
 </section>
 
-<!-- MADYOS 11 -->
-<section id="mady11Page">
-    <h2>MadyOS 11</h2>
-    <p>Optimized Windows 11 LTSC-style.</p>
-
-    <div class="gallery">
-        <img src="screenshots.jpg">
-        <img src="screenshotf.jpg">
-    </div>
-
-    <a class="button" href="https://buzzheavier.com/dwq2zz8zio25" target="_blank">Download</a>
-
-    <h3>Installation Error Fix</h3>
-    <div class="gallery"><img src="error.jpg"></div>
-
-    <ol>
-        <li>Press <code>Shift + F10</code></li>
-        <li>Type <code>regedit</code></li>
-        <li>Go to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion</code></li>
-        <li>Set <code>setup.exe</code> from 1 → 3</li>
-        <li>Restart installation</li>
-    </ol>
-
-    <a class="button" onclick="showPage('osPage')">Back</a>
+<section id="os11">
+<h2>MadyOS 11</h2>
+<div class="gallery">
+<img src="screenshots.jpg">
+<img src="screenshotf.jpg">
+</div>
+<a class="button" href="https://buzzheavier.com/dwq2zz8zio25" target="_blank">Download</a>
+<h3>Fix errore installazione</h3>
+<ol>
+<li>Shift + F10</li>
+<li>regedit</li>
+<li>HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion</li>
+<li>setup.exe → 3</li>
+</ol>
+<a class="button" onclick="showPage('os')">Back</a>
 </section>
 
-<!-- SOFTWARES & GAMES -->
-<section id="softwarePage">
-    <h2>Softwares & Games</h2>
+<section id="soft">
+<h2>Softwares</h2>
+<input id="searchSoft" onkeyup="searchSoftwares()" placeholder="Search softwares...">
 
-    <input type="text" id="searchBar" onkeyup="searchSoftware()" placeholder="Search software or games...">
+<div class="software-list">
 
-    <div class="software-list">
+<div class="software-box" data-name="activate windows office massgrave">
+<h3>Activate Windows / Office</h3>
+<a class="button" href="https://massgrave.dev/" target="_blank">Open</a>
+</div>
 
-        <!-- NEW GAMES -->
-        <div class="software-box" data-name="assetto corsa">
-            <h3>Assetto Corsa</h3>
-            <a class="button" href="https://www.mediafire.com/file/sqyzsm5sdcz17hq" target="_blank">Download</a>
-        </div>
+<div class="software-box" data-name="netflix">
+<h3>Netflix App</h3>
+<a class="button" href="https://github.com/RaoHammas/Netflix/releases/tag/Netflix" target="_blank">Download</a>
+</div>
 
-        <div class="software-box" data-name="batman arkham knight">
-            <h3>Batman Arkham Knight</h3>
-            <a class="button" href="https://gofile.io/d/yuZwtx" target="_blank">Download</a>
-        </div>
+<div class="software-box" data-name="minecraft console">
+<h3>Minecraft Console Edition</h3>
+<a class="button" href="https://gradengnostic.github.io/legacylauncherweb/" target="_blank">Play</a>
+</div>
 
-        <div class="software-box" data-name="bully">
-            <h3>Bully</h3>
-            <a class="button" href="https://gofile.io/d/9ipNEh" target="_blank">Download</a>
-        </div>
+<div class="software-box" data-name="minecraft java">
+<h3>Minecraft Java Edition</h3>
+<a class="button" href="https://buzzheavier.com/gqpnat8fteha" target="_blank">Download</a>
+</div>
 
-        <div class="software-box" data-name="detroit become human">
-            <h3>Detroit Become Human</h3>
-            <a class="button" href="https://gofile.io/d/tcNQbI" target="_blank">Download</a>
-        </div>
+<div class="software-box" data-name="capcut">
+<h3>CapCut</h3>
+<a class="button" href="https://buzzheavier.com/4jeq58cgv39n" target="_blank">Download</a>
+</div>
 
-        <div class="software-box" data-name="dirt 1">
-            <h3>Dirt 1</h3>
-            <a class="button" href="https://gofile.io/d/sfs3pB" target="_blank">Download</a>
-        </div>
+<div class="software-box" data-name="filmora">
+<h3>Filmora</h3>
+<a class="button" href="https://buzzheavier.com/5qagvfn8weva" target="_blank">Download</a>
+</div>
 
-        <div class="software-box" data-name="windows office activator massgrave">
-            <h3>Activate Windows / Office</h3>
-            <a class="button" href="https://massgrave.dev/" target="_blank">Open</a>
-        </div>
+</div>
+</section>
 
-        <div class="software-box" data-name="netflix">
-            <h3>Netflix App</h3>
-            <a class="button" href="https://github.com/RaoHammas/Netflix/releases/tag/Netflix" target="_blank">Download</a>
-        </div>
+<section id="games">
+<h2>Games (A → Z)</h2>
+<input id="searchGames" onkeyup="searchGames()" placeholder="Search games...">
 
-        <!-- PREVIOUS NEW GAMES -->
-        <div class="software-box" data-name="elden ring">
-            <h3>Elden Ring</h3>
-            <a class="button" href="https://gofile.io/d/4FhGNh" target="_blank">Download</a>
-        </div>
+<div class="games-list">
 
-        <div class="software-box" data-name="cod ghosts">
-            <h3>Call of Duty Ghosts</h3>
-            <a class="button" href="https://gofile.io/d/7NQ0YV" target="_blank">Download</a>
-        </div>
+<!-- A -->
+<div class="game-box" data-name="assetto corsa"><h3>Assetto Corsa</h3><a class="button" href="https://www.mediafire.com/file/sqyzsm5sdcz17hq" target="_blank">Download</a></div>
+<div class="game-box" data-name="assassin creed iv black flag"><h3>Assassin’s Creed IV Black Flag</h3><a class="button" href="https://gofile.io/d/gOLwyT" target="_blank">Download</a></div>
 
-        <div class="software-box" data-name="ghost of tsushima">
-            <h3>Ghost of Tsushima</h3>
-            <a class="button" href="https://bzzhr.to/sgsfahtrrai2" target="_blank">Download</a>
-        </div>
+<!-- B -->
+<div class="game-box" data-name="batman arkham knight"><h3>Batman Arkham Knight</h3><a class="button" href="https://gofile.io/d/yuZwtx" target="_blank">Download</a></div>
+<div class="game-box" data-name="beamng drive"><h3>BeamNG Drive</h3><a class="button" href="https://gofile.io/d/tR4vV9" target="_blank">Download</a></div>
+<div class="game-box" data-name="bully"><h3>Bully</h3><a class="button" href="https://gofile.io/d/9ipNEh" target="_blank">Download</a></div>
 
-        <div class="software-box" data-name="assassin creed iv black flag">
-            <h3>Assassin’s Creed IV Black Flag</h3>
-            <a class="button" href="https://gofile.io/d/gOLwyT" target="_blank">Download</a>
-        </div>
+<!-- C -->
+<div class="game-box" data-name="call of duty 1"><h3>Call of Duty 1</h3><a class="button" href="https://gofile.io/d/xuQNY4" target="_blank">Download</a></div>
+<div class="game-box" data-name="call of duty black ops 3"><h3>Call of Duty Black Ops 3</h3><a class="button" href="https://gofile.io/d/kfJDyr" target="_blank">Download</a></div>
+<div class="game-box" data-name="call of duty ghosts"><h3>Call of Duty Ghosts</h3><a class="button" href="https://gofile.io/d/7NQ0YV" target="_blank">Download</a></div>
+<div class="game-box" data-name="cs go 2017"><h3>CS:GO 2017</h3><a class="button" href="https://gofile.io/d/RsTE3u" target="_blank">Download</a></div>
 
-        <div class="software-box" data-name="the last of us part 2 tlou2">
-            <h3>The Last of Us Part II</h3>
-            <a class="button" href="https://gofile.io/d/lEHzIG" target="_blank">Download</a>
-        </div>
+<!-- D -->
+<div class="game-box" data-name="detroit become human"><h3>Detroit Become Human</h3><a class="button" href="https://gofile.io/d/tcNQbI" target="_blank">Download</a></div>
+<div class="game-box" data-name="dirt 1"><h3>Dirt 1</h3><a class="button" href="https://gofile.io/d/sfs3pB" target="_blank">Download</a></div>
 
-        <div class="software-box" data-name="resident evil village">
-            <h3>Resident Evil Village</h3>
-            <a class="button" href="https://gofile.io/d/71UUBy" target="_blank">Download</a>
-        </div>
+<!-- E -->
+<div class="game-box" data-name="elden ring"><h3>Elden Ring</h3><a class="button" href="https://gofile.io/d/4FhGNh" target="_blank">Download</a></div>
 
-        <div class="software-box" data-name="resident evil 7">
-            <h3>Resident Evil 7</h3>
-            <a class="button" href="https://gofile.io/d/F5KR62" target="_blank">Download</a>
-        </div>
+<!-- F -->
+<div class="game-box" data-name="far cry 5"><h3>Far Cry 5</h3><a class="button" href="https://gofile.io/d/3304Dw" target="_blank">Download</a></div>
+<div class="game-box" data-name="far cry 6"><h3>Far Cry 6</h3><a class="button" href="https://bzzhr.to/yam0smah3pin" target="_blank">Download</a></div>
+<div class="game-box" data-name="forza horizon 4"><h3>Forza Horizon 4</h3><a class="button" href="https://gofile.io/d/OtEhEn" target="_blank">Download</a></div>
+<div class="game-box" data-name="forza horizon 5"><h3>Forza Horizon 5</h3><a class="button" href="https://gofile.io/d/eVupkr" target="_blank">Download</a></div>
+<div class="game-box" data-name="forza horizon 6"><h3>Forza Horizon 6</h3><a class="button" href="https://bzzhr.to/q20rhnpplhce" target="_blank">Download</a></div>
+<div class="game-box" data-name="fortnite"><h3>Fortnite</h3><a class="button" href="https://gofile.io/d/zfEcQx" target="_blank">Download</a></div>
 
-        <div class="software-box" data-name="resident evil 4 remake">
-            <h3>Resident Evil 4 Remake</h3>
-            <a class="button" href="https://gofile.io/d/by0MvQ" target="_blank">Download</a>
-        </div>
+<!-- G -->
+<div class="game-box" data-name="ghost of tsushima"><h3>Ghost of Tsushima</h3><a class="button" href="https://bzzhr.to/sgsfahtrrai2" target="_blank">Download</a></div>
+<div class="game-box" data-name="god of war"><h3>God of War (2018)</h3><a class="button" href="https://gofile.io/d/JmySlU" target="_blank">Download</a></div>
+<div class="game-box" data-name="gta 3"><h3>GTA 3</h3><a class="button" href="https://www.mediafire.com/file/l1j15jhed10gp9s" target="_blank">Download</a></div>
+<div class="game-box" data-name="gta iv"><h3>GTA IV</h3><a class="button" href="https://gofile.io/d/XrqdR5" target="_blank">Download</a></div>
+<div class="game-box" data-name="gta san andreas"><h3>GTA San Andreas</h3><a class="button" href="https://buzzheavier.com/8mlainoqwr79" target="_blank">Download</a></div>
+<div class="game-box" data-name="gta v"><h3>GTA V</h3><a class="button" href="https://buzzheavier.com/w6gqiq80wacf" target="_blank">Download</a></div>
+<div class="game-box" data-name="gta vice city"><h3>GTA Vice City</h3><a class="button" href="https://gofile.io/d/Py7RvH" target="_blank">Download</a></div>
 
-        <!-- RESTORED GAMES -->
-        <div class="software-box" data-name="red dead redemption 1 rdr1">
-            <h3>Red Dead Redemption 1</h3>
-            <a class="button" href="https://www.mediafire.com/file/mvfrclpp3yzxsit" target="_blank">Download</a>
-        </div>
+<!-- M -->
+<div class="game-box" data-name="minecraft java"><h3>Minecraft Java Edition</h3><a class="button" href="https://buzzheavier.com/gqpnat8fteha" target="_blank">Download</a></div>
 
-        <div class="software-box" data-name="red dead redemption 2 rdr2">
-            <h3>Red Dead Redemption 2</h3>
-            <a class="button" href="https://gofile.io/d/5GYOmi" target="_blank">Download</a>
-        </div>
+<!-- R -->
+<div class="game-box" data-name="red dead redemption 1"><h3>Red Dead Redemption 1</h3><a class="button" href="https://www.mediafire.com/file/mvfrclpp3yzxsit" target="_blank">Download</a></div>
+<div class="game-box" data-name="red dead redemption 2"><h3>Red Dead Redemption 2</h3><a class="button" href="https://gofile.io/d/5GYOmi" target="_blank">Download</a></div>
+<div class="game-box" data-name="resident evil 4 remake"><h3>Resident Evil 4 Remake</h3><a class="button" href="https://gofile.io/d/by0MvQ" target="_blank">Download</a></div>
+<div class="game-box" data-name="resident evil 7"><h3>Resident Evil 7</h3><a class="button" href="https://gofile.io/d/F5KR62" target="_blank">Download</a></div>
+<div class="game-box" data-name="resident evil requiem"><h3>Resident Evil Requiem</h3><a class="button" href="https://gofile.io/d/QisQM8" target="_blank">Download</a></div>
+<div class="game-box" data-name="resident evil village"><h3>Resident Evil Village</h3><a class="button" href="https://gofile.io/d/71UUBy" target="_blank">Download</a></div>
 
-        <div class="software-box" data-name="the witcher 3">
-            <h3>The Witcher 3</h3>
-            <a class="button" href="https://gofile.io/d/c9Ca1I" target="_blank">Download</a>
-        </div>
-
-        <div class="software-box" data-name="god of war">
-            <h3>God of War (2018)</h3>
-            <a class="button" href="https://gofile.io/d/JmySlU" target="_blank">Download</a>
-        </div>
-
-        <!-- GTA SERIES -->
-        <div class="software-box" data-name="gta 3">
-            <h3>GTA 3</h3>
-            <a class="button" href="https://www.mediafire.com/file/l1j15jhed10gp9s" target="_blank">Download</a>
-        </div>
-
-        <div class="software-box" data-name="gta vice city">
-            <h3>GTA Vice City</h3>
-            <a class="button" href="https://gofile.io/d/Py7RvH" target="_blank">Download</a>
-        </div>
-
-        <div class="software-box" data-name="gta san andreas">
-            <h3>GTA San Andreas</h3>
-            <a class="button" href="https://buzzheavier.com/8mlainoqwr79" target="_blank">Download</a>
-        </div>
-
-        <div class="software-box" data-name="gta iv">
-            <h3>GTA IV</h3>
-            <a class="button" href="https://gofile.io/d/XrqdR5" target="_blank">Download</a>
-        </div>
-
-        <div class="software-box" data-name="gta v">
-            <h3>GTA V</h3>
-            <a class="button" href="https://buzzheavier.com/w6gqiq80wacf" target="_blank">Download</a>
-        </div>
-
+<!-- T -->
+<div class="game-box" data-name="the last of us part 2"><h3>The Last of Us Part II</h3><a class="button" href="https://gofile.io/d/lEHzIG" target="_blank">Download</a></div>
+<div class="game
